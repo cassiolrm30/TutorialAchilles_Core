@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Listar Livros";
+}
+<h2>@ViewBag.Title</h2>
+
+<div id="gridDados-header" class="bootgrid-header container-fluid">
+    <div class="row" style="height:70px;">
+        <div class="col-sm-4 actionBar">
+            <div class="search form-group">
+                <div class="input-group">
+                    <span class="icon glyphicon input-group-addon glyphicon-search"></span>
+                    <input type="text" class="search-field form-control" style="width:200px;" placeholder="Pesquisar">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 actionBar" style="text-align:center;">
+            <div class="actions btn-group">
+                <button class="btn btn-default" type="button" title="Atualizar">
+                    <span class="icon glyphicon glyphicon-refresh"></span>
+                </button>
+                <div class="dropdown btn-group" id="grp1"></div>
+                <div class="dropdown btn-group" id="grp2"></div>
+            </div>
+        </div>
+        <div class="col-sm-4 actionBar" style="text-align:right;">
+            <a href="#" class="btn btn-success" data-action="Create" id="btnNovo">
+                <span class="glyphicon glyphicon-plus"></span>
+                Novo Livro
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="divGrid"></div>
+
+<div id="gridDados-footer" class="bootgrid-footer container-fluid">
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 infoBar"><div class="infos"></div></div>
+    </div>
+</div>
+
+<div id="conteudoModal">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="form-horizontal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-lock"></span> Cadastro</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form action="Livro/Salvar" method="post" id="formCrud" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Título</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" style="width:100px;" id="Titulo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Autor</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" style="width:100px;" id="Autor">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Ano de Edição</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" style="width:100px;" id="AnoEdicao">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Valor</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" style="width:100px;" id="Valor">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Gênero</label>
+                            <div class="col-md-10">
+                                <select id="GeneroId" class="form-control">
+                                    <option value="1">Teste de Genero</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="text-align:center;">
+                    <button type="button" class="btn btn-default">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+<script src="~/js/ControlarGrid.js"></script>
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        definirAgrupamento();
+        definirGrid(1);
+    });
+</script>
+}

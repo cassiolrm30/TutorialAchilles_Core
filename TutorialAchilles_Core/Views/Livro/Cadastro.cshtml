@@ -1,0 +1,50 @@
+﻿  <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="form-horizontal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><span class="glyphicon glyphicon-lock"></span> Cadastro</h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+                <form action="Livro/Salvar" method="post" id="formCrud" role="form">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Título</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" style="width:100px;" id="Titulo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Autor</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" style="width:100px;" id="Autor">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Ano de Edição</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" style="width:100px;" id="AnoEdicao">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Valor</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" style="width:100px;" id="Valor">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Gênero</label>
+                        <div class="col-md-10">
+                            <select id="GeneroId" class="form-control">
+                                <option value="1">Teste de Genero</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="text-align:center;">
+                <button type="button" class="btn btn-default">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
